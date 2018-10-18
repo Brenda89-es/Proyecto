@@ -8,9 +8,11 @@
 \usepackage{multirow}
 \usepackage{xcolor,colortbl}
 \usepackage{setspace}
+\usepackage{titling}
+\usepackage[hidelinks]{hyperref}
 \author{Brenda Romero Salcedo}
-\title{Proyecto final. Review Científico sobre VIH}
-\date{16 de Octubre de 2018}
+\title{Módulo 6. Proyecto final \\ \\Review Científico sobre VIH}
+\date{\today}
 \begin{document}
 \twocolumn[
 \begin{@twocolumnfalse}
@@ -19,9 +21,15 @@
 \vspace*{-1cm}
 \begin{center}\rule{0.9\textwidth}{0.1mm}\end{center}
 \begin{abstract}
+\begin{center}
+\large
+\url{https://github.com/Brenda89-es/proyecto_final}
+\end{center}
 \begin{quote}
-\normalsize La infección-enfermedad por VIH/SIDA es una afección crónica transmisible de tipo progresivo y causa viral, en la cual se establece una relación muy diversa entre huésped y virus, que finalmente condiciona la aparición de procesos morbosos oportunistas o tumores raros, o ambos\cite{Castillo2004}.
-El VIH/SIDA es una pandemia. A nivel mundial para el año 2002 se estimaba 3.1 millones de muertes por VIH/SIDA, 42 millones de adultos y niños viviendo con el VIH/SIDA y 5 millones de casos nuevos de infección por el VIH en estos grupos, de los cuales 150,000 corresponderían a América Latina\cite{LinaMariaVera2004}.En España hay aproximadamente 130.000 infectados por el VIH, lo que representa una prevalencia de infección de 2,7-3,7 casos por 1.000 habitantes, y se han notificado casi 80.000 casos de SIDA hasta el 30 de septiembre de 2010. En los nuevos diagnósticos de infección por el VIH, la transmisión en hombres que mantienen relaciones sexuales con hombres es la más frecuente, seguida de la heterosexual, y finamente la producida en usuarios de drogas inyectadas (UDI) \cite{Marco2012}.\\
+\normalsize 
+Tarea del módulo 6 del curso LaTex y Git Aplicado a la Investigación Científica, que consiste en la elaboración de un proyecto final que englobe todo lo aprendido durante el curso. Dicho proyecto consiste en la elaboración de un documento de tipo científico, en mi caso he tratado de seguir la estructura de un review; y de un repositorio que lo incluya, enlace al repositorio al inicio de este resumen. No obstante, se trata de un modo muy general y quizás un poco inconexo, desde el punto de vista del contenido bibliográfico sobre VIH, puesto que la información obtenida, aunque veraz, es un poco antigua en el algunos casos. A pesar de ello, y afortunadamente, no es lo que se evalúa en este curso. \\ \\ 
+La infección-enfermedad por VIH/SIDA es una afección crónica transmisible de tipo progresivo y causa viral, en la cual se establece una relación muy diversa entre huésped y virus, que finalmente condiciona la aparición de procesos morbosos oportunistas o tumores raros, o ambos\cite{Castillo2004}.
+El VIH/SIDA es una pandemia. A nivel mundial para el año 2002 se estimaba 3.1 millones de muertes por VIH/SIDA, 42 millones de adultos y niños viviendo con el VIH/SIDA y 5 millones de casos nuevos de infección por el VIH en estos grupos, de los cual es 150,000 corresponderían a América Latina\cite{LinaMariaVera2004}.En España hay aproximadamente 130.000 infectados por el VIH, lo que representa una prevalencia de infección de 2,7-3,7 casos por 1.000 habitantes, y se han notificado casi 80.000 casos de SIDA hasta el 30 de septiembre de 2010. En los nuevos diagnósticos de infección por el VIH, la transmisión en hombres que mantienen relaciones sexuales con hombres es la más frecuente, seguida de la heterosexual, y finamente la producida en usuarios de drogas inyectadas (UDI) \cite{Marco2012}.\\
 La neuropatía periférica es la complicación neurológica más frecuente en la infección por VIH \cite{Ferri2002}.  Las diferentes situaciones clínicas asociadas al VIH/sida, que se dan en el transcurso de la infección, aumentan considerablemente el riesgo de malnutrición y repercuten en el consumo, la digestión y el aprovechamiento de los alimentos \cite{Herrera2004}. \\ \\
 {\bfseries Palabras clave:} VIH, Infectados, Pandemia, Transmisión, Neuropatía, Malnutrición.
 \end{quote}
@@ -125,19 +133,16 @@ El modelo está caracterizado por tres ecuaciones \cite{Kirschner1996}, las cual
 \begin{center}
 \doublespacing
 {\itshape \underline{Ecuación 1:}} \\
-$dT(t)/dt = s(t)-\mu_TT(t)+ \\ 
-r(T(t)V(t))/(C+V(t))- K_VT(t)V(t),$ \\ 
+$dT(t)/dt = s(t)-\mu_TT(t)+ r(T(t)V(t))/(C+V(t))-K_VT(t)V(t),$ \\ 
 {\itshape \underline {Ecuación 2:}} \\
-$dT^i(t)/dt = K_vT(t)V(t)-\mu_T^iT^i(t)-\\
-r((T^i)(t)V(t))/(C+V(t)),$ \\
+$dT^i(t)/dt = K_vT(t)V(t)-\mu_T^iT^i(t)-r((T^i)(t)V(t))/(C+V(t)),$ \\
 {\itshape \underline {Ecuación 3:}} \\
-$dV(t)/dt=Nr(T^i(t)V(t))/C+V(t)-k_TT(t)V(t)+ \\
-(gvV(t)/b+V(t)). $ \\
+$dV(t)/dt=Nr(T^i(t)V(t))/C+V(t)-k_TT(t)V(t)+(gvV(t)/b+V(t)). $ \\
 \end{center}
-{\itshape La Ecuación 1 representa la fuente de nuevas céĺulas T desde el Timo.  El virus puede infectar timocitos, se eligió una función que describe la fuente de decrecimiento en función de la carga viral. Se asume que la población de células T no infectadas se reduce a la mitad. A ésto le sigue una muerte natural de las células debido a que tienen un tiempo de vida finito. La media de vida se representa como \muT. El siguiente término representa la simulación de células T que proliferan gracias a la presencia del virus, r es nivel máximo de proliferación, y C es la mitad  de la constante de saturación durante el proceso. La idea es la siguiente, como está claro que tanto las células T CD8+ y CD4+ son específicas para el HIV serán directamente estimuladas. Una vez activadas, estimular células CD8+ y CD4+ , lo que podría ser o no específico al VIH. El último término representa la infección de células T CD4+ por el virus determinando el número total de encuentrso de células T con el virus, supuesto en un nivel constante definido como kV. 
+\itshape La Ecuación 1 representa la fuente de nuevas céĺulas T desde el Timo.  El virus puede infectar timocitos, se eligió una función que describe la fuente de decrecimiento en función de la carga viral. Se asume que la población de células T no infectadas se reduce a la mitad. A ésto le sigue una muerte natural de las células debido a que tienen un tiempo de vida finito. La media de vida se representa como $1/\mu_T$. El siguiente término representa la simulación de células T que proliferan gracias a la presencia del virus, r es nivel máximo de proliferación, y C es la mitad  de la constante de saturación durante el proceso. La idea es la siguiente, como está claro que tanto las células T CD8+ y CD4+ son específicas para el HIV serán directamente estimuladas. Una vez activadas, estimular células CD8+ y CD4+ , lo que podría ser o no específico al VIH. El último término representa la infección de células T CD4+ por el virus determinando el número total de encuentrso de células T con el virus, supuesto en un nivel constante definido como kV. 
 Basándonos en el gran número de células y de viriones involucrados, asumimos que el Principio de Acción de Masas se aplicará también aquí \cite{Kirschner1996}.\\ \\
 En la Ecuación 2 se describe el cambio en la población de células T CD4+. El 1º término , ganancias de Ti , supone una pérdida en la Ecuación 1. Por tanto, las células infectadas que se pierden tienen una longitud finita de vida al tiempo  que son estimuladas a proliferar, las cuales son destruidas durante el proceso de proliferación por el estallido de la carga vírica \cite{Kirschner1996}. \\ \\
-En la Ecuacuión 3, El 1º y 3º término corresponde con la "causa" de la población de células víricas. Los viriones son liberados gracias al estallido de las células T CD4+ (como se observa en la Ecuación 2), descrita por el 1º término, en el que la media de N partículas son liberadas por cada célula infectada. El 3º término corresponde con el crecimiento del virus a partir de otras células infectadas, tales como macrófafos y timocitos infectados. El nivel de crecimiento del proceso es gV, y la mitad de la constante de saturación es b, término que también cuantifica la muerte natural del virus. El 2º término es la pérdida de respuesta inmune específica; como por ejemplo, células T CD8+ mantando virus; término de "acción masiva" con un nivel kT \cite{Kirschner1996}.}
+En la Ecuacuión 3, El 1º y 3º término corresponde con la "causa" de la población de células víricas. Los viriones son liberados gracias al estallido de las células T CD4+ (como se observa en la Ecuación 2), descrita por el 1º término, en el que la media de N partículas son liberadas por cada célula infectada. El 3º término corresponde con el crecimiento del virus a partir de otras células infectadas, tales como macrófafos y timocitos infectados. El nivel de crecimiento del proceso es gV, y la mitad de la constante de saturación es b, término que también cuantifica la muerte natural del virus. El 2º término es la pérdida de respuesta inmune específica; como por ejemplo, células T CD8+ mantando virus; término de "acción masiva" con un nivel kT \cite{Kirschner1996}.
 \section{Conclusión}
 \ En consideración con la prevalencia de infección por VIH, y su relación con los factores que se asocian con los presos en España, se concluye que Las prisiones finalmente pueden jugar un papel importante –epidemiológico, económico, clínico y  terapéutico– mediante la identificación de individuos infectados por VIH sin diagnosticar. Se calcula que en la UE este grupo puede representar el 30 de cada 65 de todos los infectados. Las recomendaciones del Centro Europeo para el Control de Enfermedades (ECDC) consideran a la Sanidad Penitenciaria un elemento esencial de los programas nacionales dirigidos a expandir la prueba del VIH y reducir el diagnóstico tardío. En las prisiones de España la serología VIH se oferta desde finales de los años ochenta, de forma gratuita, voluntaria y confidencial, a todos los ingresados. Procede, por consiguiente, no bajar la guardia y continuar recomendando un completo estudio de todos los ingresados, con especial dedicación a los mayores de 40 años, a los UDI y a los infectados por
 VHB y/o por VHC como los grupos más vulnerables de haber adquirido el VIH en los internados de prisión. \cite{Marco2012}\\ \\
